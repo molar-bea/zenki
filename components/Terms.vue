@@ -10,7 +10,7 @@ export default {
 
 <template>
     <client-only>
-        <div id="textMessage" class="text-message">Terms and Condition</div>
+        <div id="textMessage" class="text-message">Terms and Conditions</div>
     </client-only>
 </template>
 

@@ -1,0 +1,58 @@
+
+Terms of Service & Privacy Policy
+
+1. Scope of Service
+The App is a guidance tool for university admissions. Important: The App facilitates the organization and tracking of applications; however, official admission is contingent upon the successful submission and verification of physical documents at the University Registrar.
+
+2. Data Collection (DPA & GDPR Compliance)
+To provide our services, we collect the following Personal Data:
+
+Identity Data: Name, date of birth, and student identification numbers.
+
+Contact Data: Email address and phone number for status notifications.
+
+Academic Data: GPA, test scores, and previous school information for eligibility checks.
+
+Digital Pre-checks: Images of documents uploaded for preliminary review.
+
+3. Purpose of Processing
+Your data is processed based on Contractual Necessity and Legitimate Interest:
+
+To verify eligibility for specific academic programs.
+
+To manage appointment scheduling for physical document drop-offs.
+
+To provide real-time updates on your admission status.
+
+4. Data Subject Rights
+Under the Data Privacy Act of 2012 (PH) and GDPR (EU), you have the right to:
+
+Access & Rectification: Request a copy of your data or correct inaccuracies.
+
+Erasure (Right to be Forgotten): Request deletion of your account (subject to university record-keeping laws).
+
+Data Portability: Request a digital copy of your provided data.
+
+Withdraw Consent: Withdraw your consent for data processing at any time.
+
+5. Data Retention & Security
+Storage: Digital copies uploaded for "pre-checks" are stored on secured servers with AES-256 encryption.
+
+Retention: If an application is unsuccessful or withdrawn, personal data is purged after [e.g., 1 year], unless a longer period is required by the Education Act.
+
+Physical Documents: The App does not "store" physical documents; once handed to the university, those are governed by the University’s Manual of Regulations.
+
+6. Third-Party Sharing
+We do not sell your data. Data is only shared with:
+
+Internal University Departments (Registrar, Dean’s Office, Accounting).
+
+Cloud service providers (as data processors) under strict confidentiality agreements.
+
+7. User Responsibilities
+Users must provide truthful and accurate information.
+
+Users acknowledge that the digital "pre-check" does not constitute final acceptance of a document; the physical copy remains the "Source of Truth."
+
+Acceptance
+By clicking "I Agree" or using the App, you signify your "Informed Consent" as defined by the DPA of 2012 and "Explicit Consent" under the GDPR.

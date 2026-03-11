@@ -1,0 +1,48 @@
+Privacy Policy
+Last Updated: March 12, 2026
+
+Zenki is committed to protecting your privacy. This policy explains how we handle your personal data as you navigate the university admission process.
+
+1. Data Collection & Purpose
+We collect data to facilitate your admission journey. Under DPA 2012 and GDPR, we process data based on Consent and Contractual Necessity.
+
+Identity & Contact: Name, email, and phone number (to send status updates and appointment reminders).
+
+Academic Profile: GPA and test scores (to perform the Eligibility Check).
+
+Document Metadata: We track the status of your physical documents (e.g., "Birth Certificate Prepared").
+
+Digital Pre-checks: If you upload photos of documents for preliminary review, these are treated as Sensitive Personal Information.
+
+2. Physical Document Handling
+The App acts as a tracking interface only.
+
+The Source of Truth: The University Registrar remains the sole custodian of your physical copies.
+
+Limited Access: App administrators only see the status of your physical submission (e.g., "Received at Window 2") to update your digital dashboard.
+
+3. Your Rights as a Data Subject
+Regardless of your location, we grant you the following rights:
+
+Right to Information: To know if your data is being processed.
+
+Right to Access & Rectification: To view and correct your profile and academic data.
+
+Right to Erasure (Right to be Forgotten): To request deletion of your account if you withdraw your application.
+
+Right to Data Portability: To receive a digital copy of your application history.
+
+4. Data Storage & Security
+Security: We use industry-standard encryption (SSL/TLS) for data in transit and at rest.
+
+Retention: Data is kept only for the duration of the admission cycle. If you are admitted, your data migrates to the Student Information System. If not, data is purged after one (1) year unless otherwise required by law.
+
+5. Third-Party Sharing
+We do not sell your personal data. Data is only shared with:
+
+University Departments: (Registrar, Admissions Committee, Accounting) for processing your enrollment.
+
+Technical Partners: Cloud hosting providers who are strictly bound by Data Processing Agreements (DPA).
+
+6. International Transfers (GDPR)
+If you are accessing this app from the EU, your data is transferred to our servers in Philippines. We ensure "Adequate Protection" through Standard Contractual Clauses.

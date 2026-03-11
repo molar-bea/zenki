@@ -1,0 +1,44 @@
+1. Profile Setup & Eligibility Check
+Before diving into paperwork, the student needs to know what they actually qualify for.
+
+User Action: Student enters their academic background (e.g., GPA, high school track, standardized test scores).
+
+System Action: The app filters and suggests programs/courses the student is eligible to apply for.
+
+Goal: Prevent students from wasting time on programs they don't meet the criteria for.
+
+2. Interactive Document Checklist
+Since students must submit physical copies, the app acts as their "digital folder."
+
+User Action: Student selects a target program.
+
+System Action: Generates a dynamic checklist (e.g., Birth Certificate, Form 138, Good Moral Character, 2x2 Photos).
+
+Key Feature: Include a "Prepared" toggle for each item so students can track what they’ve already put in their physical envelope.
+
+3. Step-by-Step Submission Guide
+This is the "GPS" for the physical submission process.
+
+User Action: Student views the "Submission Map."
+
+System Action: Displays the specific office locations, operating hours, and the exact sequence of windows they need to visit (e.g., Registrar -> Accounting -> Dean’s Office).
+
+Goal: Reduce anxiety by showing exactly where to walk once they arrive on campus with their documents.
+
+4. Appointment Scheduling
+To avoid the dreaded long lines, the MVP should manage flow.
+
+User Action: Student selects a date and time slot to drop off their physical documents.
+
+System Action: Issues a digital queue number or QR code.
+
+Goal: Ensure the university staff isn't overwhelmed and the student doesn't wait for hours.
+
+5. Status Tracker (Post-Submission)
+Once the physical copies are handed over, the student usually enters a "black hole" of waiting.
+
+User Action: Student checks the app for updates.
+
+System Action: Updates the status from "Documents Submitted" to "Under Review" or "Verified."
+
+Goal: Provide peace of mind and reduce the number of students calling the office for updates.

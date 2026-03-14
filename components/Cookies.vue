@@ -10,9 +10,10 @@
         <div class="zk-cookie-actions">
             <a href="/policy" class="zk-cookie-link" target="_blank">
                 <div class="zk-cookie-action zk-cookie-more">Read more</div>
+                <div id="zkCookieOK" class="zk-cookie-action zk-cookie-ok">Accept all</div>
             </a>
         </div>
-        <div id="zkCookieOK" class="zk-cookie-action zk-cookie-ok">Accept all</div>
+        
         </div>
     </client-only>
 </template>

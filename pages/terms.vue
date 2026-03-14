@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import { useSeoMeta, useHead } from '@vueuse/head';
 
-const title = "Zenki | Terms and Conditions";
+const title = "Zenki | Terms of Service";
 const description = "Terms and conditions for using the Zenki application.";
 
 useSeoMeta({

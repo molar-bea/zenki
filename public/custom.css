@@ -78,3 +78,19 @@ body {
 /* main contents */
 
 /* copyright */
+.zk-footer-area {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.8em;
+    text-align: center;
+    color: #666;
+}
+.zk-footer-links a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #666;
+}
+.zk-footer-copyright {
+    margin-top: 5px;
+}
+    

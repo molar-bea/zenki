@@ -3,7 +3,7 @@
 <template>
     <client-only>
         <NavBar />
-        <Policy/>
+        <div id="zkMain" class="zk-main"></div>
         <Copyright />
     </client-only>
 </template>

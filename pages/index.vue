@@ -4,8 +4,8 @@
     <client-only>
         <NavBar />
         <div id="zkMain" class="zk-main"></div>
-        <!-- <Cookies /> -->
-        <!-- <Copyright /> -->
+        <Cookies />
+        <Copyright />
     </client-only>
 </template>
 

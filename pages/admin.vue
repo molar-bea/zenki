@@ -1,10 +1,12 @@
-<script  lang="ts"></script>
+<script lang="ts"></script>
+
 <template>
   <client-only>
     <NavBar :navAdminMode="navAdminMode" />
     <div id="zkMain" class="zk-main">
-      <span id="zkPageTitle" class="zk-page-title zk-hidden">Latest</span>
-      <div id="zkContainer" class="zk-container"></div>
+      <span id="zkSimpleHello" class="zk-simple-hello zk-hidden">
+        Hello, {{ fullName }}!
+      </span>
     </div>
     <Cookies />
     <Copyright />
@@ -13,6 +15,7 @@
 
 <script setup lang="ts">
 import { useSeoMeta, useHead } from "@vueuse/head";
+import { useRouter } from "vue-router";
 
 const title = "Zenki | Home";
 const description =
@@ -36,6 +39,7 @@ useHead({
   ],
 });
 
+/* Cookies */
 const globalDelay = 500;
 
 const allowCookies = useCookie<boolean>("allowCookies", {
@@ -43,8 +47,6 @@ const allowCookies = useCookie<boolean>("allowCookies", {
   secure: true,
   maxAge: 60 * 60 * 24,
 });
-
-//allowCookies.value =false;
 allowCookies.value = allowCookies.value ?? false;
 
 const retries = useCookie<number>("retries", {
@@ -82,54 +84,39 @@ const fullName = useCookie<string>("fullName", {
 });
 fullName.value = fullName.value ?? "";
 
-type ContentItem = {
-  id: string;
-  author: string;
-  title: string;
-  content: string;
-  isSynchronized: number;
-  createdAt: number;
-};
-
-type ContentResponse = {
-  contents: ContentItem[];
-};
-
+/* Access Control */
 const router = useRouter();
-const zkServer = "https://zenki-api.vercel.app";
 let navAdminMode = userLevel.value >= 2 ? "zk-nav-admin" : "";
 
 function getByID<T extends HTMLElement>(id: string) {
   return document.getElementById(id) as T;
 }
-
 function checkAuthorizations() {
   if (!accessToken.value) {
     router.push("/login");
-  } else if (userLevel.value >= 2) {
-    router.push("/admin");
+  } else if (userLevel.value < 2) {
+    router.push("/");
   }
 
   const navBasic = getByID<HTMLDivElement>("zkNavBasic");
   const navAdmin = getByID<HTMLDivElement>("zkNavAdmin");
-  const navLogout = getByID<HTMLDivElement>("zkNavBasicLogout");
-  const pageTitle = getByID<HTMLSpanElement>("zkPageTitle");
+  const navLogout = getByID<HTMLDivElement>("zkNavAdminLogout");
+  const simpleHello = getByID<HTMLSpanElement>("zkSimpleHello");
 
-  if (!navBasic || !navAdmin || !navLogout || !pageTitle) return;
+  if (!navBasic || !navAdmin || !navLogout || !simpleHello) return;
 
-  navLogout.addEventListener("click", (e) => {
+  navLogout.addEventListener("click", () => {
     retries.value = 0;
     username.value = "";
     accessToken.value = "";
     userLevel.value = -1;
     fullName.value = "";
-
     router.push("/login");
   });
 
-  navAdmin.remove();
-  navBasic.classList.remove("zk-hidden");
-  pageTitle.classList.remove("zk-hidden");
+  navBasic.remove();
+  navAdmin.classList.remove("zk-hidden");
+  simpleHello.classList.remove("zk-hidden");
 
   loadModal();
 }
@@ -181,7 +168,6 @@ function allowAllCookies() {
   lastCookieClicked = Date.now();
   allowCookies.value = true;
   showCookiePopup(false);
-  loadContents();
 }
 
 onMounted(() => {
@@ -189,112 +175,35 @@ onMounted(() => {
     checkAuthorizations();
   });
 });
-
-async function loadContents() {
-  if (!accessToken.value) return;
-  var rawContents = [] as ContentItem[];
-  try {
-    const query = new URLSearchParams({
-      username: username.value,
-      userLevel: String(userLevel.value),
-      accessToken: accessToken.value,
-    }).toString();
-    const response = (await $fetch(`${zkServer}/get_contents?${query}`, {
-      headers: { "Content-Type": "application/json" },
-      method: "GET",
-    })) as ContentResponse;
-    rawContents = response.contents;
-  } catch (e: any) {
-    return;
-  }
-
-  const container = getByID<HTMLDivElement>("zkContainer");
-  if (!container) return;
-
-  container.innerHTML = "";
-  const contents = renderContents(rawContents) as HTMLElement;
-  container.appendChild(contents);
-}
-
-function renderContents(data: ContentItem[]): HTMLElement {
-  const parent = document.createElement("div");
-  parent.className = "zk-contents";
-
-  data.forEach((item, index) => {
-    const wrapper = document.createElement("div");
-    wrapper.id = `content-${index}`;
-    wrapper.className = "zk-content-box";
-    const title = document.createElement("h2");
-    title.className = "zk-content-title";
-    title.textContent = item.title;
-    const meta = document.createElement("p");
-    const date = new Date(item.createdAt * 1000);
-    const published = date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-    meta.textContent = `by ${item.author} • ${published}`;
-    meta.className = "zk-content-meta";
-
-    const content = document.createElement("p");
-    content.className = "zk-content-data";
-    content.textContent = item.content;
-
-    wrapper.append(title, meta, content);
-    parent.appendChild(wrapper);
-  });
-
-  return parent;
-}
 </script>
-
 <style>
-.zk-nav-link:hover {
+.zk-nav-admin {
+  background-color: #A1887F !important;
+}
+.zk-nav-admin a,
+.zk-nav-admin span {
+  color: #fff !important;
+}
+.zk-nav-admin .zk-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.zk-nav-admin .zk-nav-home:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.zk-nav-admin .zk-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
   cursor: pointer;
 }
-
-.zk-page-title {
-  position: relative;
-  margin: 60px auto 0;
-  width: 800px;
-  max-width: 90%;
-  padding: 20px;
-  font-size: 1.8em;
-  font-weight: bold;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  display: block;
-}
-
-.zk-container {
-  position: relative;
-  margin: 20px auto 0;
-  width: 800px;
-  max-width: 90%;
-}
-
-.zk-content-box {
-  margin-bottom: 10px;
+.zk-simple-hello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
   padding: 20px;
   background: #fff;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.zk-content-title {
-  line-height: 1.5em;
-  font-weight: bold;
-}
-
-.zk-content-meta {
-  font-size: 0.8em;
-  color: #666;
-}
-
-.zk-content-data {
-  margin-top: 10px;
-  line-height: 1.5em;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px #000000bf;
 }
 </style>

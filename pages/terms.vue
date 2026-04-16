@@ -4,6 +4,7 @@
   <client-only>
     <NavBar navAdminMode="" />
     <div id="zkMain" class="zk-main"></div>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

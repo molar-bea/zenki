@@ -7,6 +7,7 @@
       <div id="zkContainer" class="zk-container"></div>
     </div>
     <Cookies />
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

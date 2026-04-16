@@ -128,6 +128,7 @@
         </p>
       </section>
     </main>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

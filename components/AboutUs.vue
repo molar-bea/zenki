@@ -20,9 +20,9 @@ export default {
       teamMembers: [
         { id: 1, name: 'Bea R. Molar', role: 'Project Manager' },
         { id: 2, name: 'Gian Carlo J. Suico', role: 'Database Designer' },
-        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer', to: '/npaloma' },
-        { id: 3, name: 'Raniel John B. Flores', role: 'Web Designer' },
-        { id: 3, name: 'Exzon Y. Mendoza II', role: 'Web Designer' },
+        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer' },
+        { id: 4, name: 'Raniel John B. Flores', role: 'Web Designer' },
+        { id: 5, name: 'Exzon Y. Mendoza II', role: 'Web Designer' },
         { id: 6, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer' }
       ]
     }

@@ -73,6 +73,7 @@ useHead({
     </main>
 
     <!-- Footer -->
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

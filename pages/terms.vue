@@ -91,6 +91,7 @@
         </div>
       </div>
     </div>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

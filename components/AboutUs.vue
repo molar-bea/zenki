@@ -3,7 +3,7 @@
     <h2 class="zk-team-title">Our Team</h2>
     <div class="zk-team-grid">
       <div v-for="member in teamMembers" :key="member.id" class="zk-team-card">
-        <router-link :to="`/team/${member.id}`" class="zk-member-link">
+        <router-link :to="member.to || `/team/${member.id}`" class="zk-member-link">
           <h3>{{ member.name }}</h3>
         </router-link>
         <p class="zk-role">{{ member.role }}</p>
@@ -20,7 +20,7 @@ export default {
       teamMembers: [
         { id: 1, name: 'Bea R. Molar', role: 'Project Manager' },
         { id: 2, name: 'Gian Carlo J. Suico', role: 'Database Designer' },
-        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer' },
+        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer', to: '/npaloma' },
         { id: 3, name: 'Raniel John B. Flores', role: 'Web Designer' },
         { id: 3, name: 'Exzon Y. Mendoza II', role: 'Web Designer' },
         { id: 6, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer' }

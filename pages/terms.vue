@@ -3,6 +3,7 @@
 <template>
   <client-only>
     <NavBar navAdminMode="" />
+    
     <div id="zkMain" class="zk-main">
       <div class="terms-wrapper">
         <header class="terms-header">
@@ -91,6 +92,7 @@
         </div>
       </div>
     </div>
+    <AboutUs />
     <Copyright />
   </client-only>
 </template>

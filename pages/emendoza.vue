@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
-
-// Remove @vueuse/head imports if not installed
-// Use Vue's built-in head management or install @vueuse/head
+import { ref } from "vue";
+import { useSeoMeta, useHead } from "@vueuse/head";
 
 const fullName = "Exzon Y. Mendoza II";
 const title = `${fullName} | Personal Page`;

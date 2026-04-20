@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useSeoMeta, useHead } from "@vueuse/head";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+
+// Remove @vueuse/head imports if not installed
+// Use Vue's built-in head management or install @vueuse/head
 
 const fullName = "Exzon Y. Mendoza II";
 const title = `${fullName} | Personal Page`;
@@ -13,31 +15,58 @@ function onPhotoError() {
   currentPhoto.value = fallbackPhoto;
 }
 
-useSeoMeta({
-  title: () => title,
-  description: () => description,
-  charset: "utf-8",
-  viewport: "width=device-width, initial-scale=1.0",
+// Set document title and meta tags dynamically
+onMounted(() => {
+  document.title = title;
+  
+  // Update meta description
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', description);
+  } else {
+    const meta = document.createElement('meta');
+    meta.name = 'description';
+    meta.content = description;
+    document.head.appendChild(meta);
+  }
+  
+  // Add viewport meta if not exists
+  let viewport = document.querySelector('meta[name="viewport"]');
+  if (!viewport) {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0';
+    document.head.appendChild(meta);
+  }
 });
 
-useHead({
-  link: [
-    { rel: "icon", type: "image/png", href: "/logo.png" },
-    { rel: "stylesheet", href: "/reset.css" },
-    { rel: "stylesheet", href: "/custom.css" },
-    { rel: "preconnect", href: "https://fonts.googleapis.com" },
-    { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-    {
-      rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap",
-    },
-  ],
+// Add stylesheets on mount
+onMounted(() => {
+  // Check if reset.css is already added
+  if (!document.querySelector('link[href="/reset.css"]')) {
+    const resetLink = document.createElement('link');
+    resetLink.rel = 'stylesheet';
+    resetLink.href = '/reset.css';
+    document.head.appendChild(resetLink);
+  }
+  
+  // Check if custom.css is already added
+  if (!document.querySelector('link[href="/custom.css"]')) {
+    const customLink = document.createElement('link');
+    customLink.rel = 'stylesheet';
+    customLink.href = '/custom.css';
+    document.head.appendChild(customLink);
+  }
 });
 </script>
 
 <template>
-  <client-only>
-    <NavBar navAdminMode="" />
+  <div>
+    <!-- Remove client-only wrapper or replace with div -->
+    <!-- If NavBar and Copyright components exist, import them -->
+    <nav class="nav-bar" v-if="false">
+      <!-- Temporary placeholder for NavBar -->
+    </nav>
 
     <main class="em-wrap">
       <section class="em-hero">
@@ -52,7 +81,11 @@ useHead({
           <p class="em-kicker">Personal Page</p>
           <h1 class="em-name">Exzon Y. Mendoza II</h1>
           <p class="em-contact">Leyte, PH | +63 927 197 0911 | lellugetdk@gmail.com</p>
-          <p class="em-contact">github.com/Floranboi
+          <p class="em-contact">
+            <a href="https://github.com/Floranboi" target="_blank" rel="noopener noreferrer">
+              github.com/Floranboi
+            </a>
+          </p>
           <p class="em-summary">Aspiring Full-Stack Developer/Game Developer</p>
         </div>
       </section>
@@ -113,8 +146,11 @@ useHead({
       </section>
     </main>
 
-    <Copyright />
-  </client-only>
+    <div class="copyright">
+      <!-- Temporary placeholder for Copyright component -->
+      <p>&copy; {{ new Date().getFullYear() }} Exzon Y. Mendoza II</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -178,6 +214,17 @@ useHead({
   font-weight: 500;
 }
 
+.em-contact a {
+  color: #2b455f;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.em-contact a:hover {
+  border-bottom-color: #2b455f;
+}
+
 .em-summary {
   margin-top: 10px;
   max-width: 72ch;
@@ -235,6 +282,15 @@ useHead({
 .em-card li {
   margin: 4px 0;
   line-height: 1.45;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85rem;
+  color: #6b7c8f;
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid #d2d9e0;
 }
 
 @media (max-width: 760px) {

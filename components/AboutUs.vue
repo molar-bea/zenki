@@ -3,7 +3,7 @@
     <h2 class="zk-team-title">Our Team</h2>
     <div class="zk-team-grid">
       <div v-for="member in teamMembers" :key="member.id" class="zk-team-card">
-        <router-link :to="`/team/${member.id}`" class="zk-member-link">
+        <router-link :to="member.to || `/team/${member.id}`" class="zk-member-link">
           <h3>{{ member.name }}</h3>
         </router-link>
         <p class="zk-role">{{ member.role }}</p>

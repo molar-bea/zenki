@@ -3,7 +3,7 @@
     <h2 class="zk-team-title">Our Team</h2>
     <div class="zk-team-grid">
       <div v-for="member in teamMembers" :key="member.id" class="zk-team-card">
-        <router-link :to="member.to || `/team/${member.id}`" class="zk-member-link">
+        <router-link :to="member.route || `/team/${member.id}`" class="zk-member-link">
           <h3>{{ member.name }}</h3>
         </router-link>
         <p class="zk-role">{{ member.role }}</p>
@@ -18,12 +18,12 @@ export default {
   data() {
     return {
       teamMembers: [
-        { id: 1, name: 'Bea R. Molar', role: 'Project Manager' },
-        { id: 2, name: 'Gian Carlo J. Suico', role: 'Database Designer' },
-        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer' },
-        { id: 4, name: 'Raniel John B. Flores', role: 'Web Designer' },
-        { id: 5, name: 'Exzon Y. Mendoza II', role: 'Web Designer' },
-        { id: 6, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer' }
+        { id: 1, name: 'Bea R. Molar', role: 'Project Manager', route: '/bmolar' },
+        { id: 2, name: 'Gian Carlo J. Suico', role: 'Database Designer' , route: '/gsuico'  },
+        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer' , route: '/npaloma'  },
+        { id: 4, name: 'Raniel John B. Flores', role: 'Web Designer' , route: '/bflores' },
+        { id: 5, name: 'Exzon Y. Mendoza II', role: 'Web Designer', route: '/emendoza' },
+        { id: 6, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer', route: '/jcormanes' }
       ]
     }
   }

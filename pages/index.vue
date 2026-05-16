@@ -24,7 +24,7 @@ link: [
 { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
 {
 rel: "stylesheet",
-href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap",
+href: "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap",
 },
 ],
 });

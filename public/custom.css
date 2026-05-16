@@ -176,3 +176,53 @@ body {
 .zk-footer-copyright {
   margin-top: 5px;
 }
+
+
+.zk-nav-link:hover {
+  cursor: pointer;
+}
+
+.zk-page-title {
+  position: relative;
+  margin: 60px auto 0;
+  width: 800px;
+  max-width: 90%;
+  padding: 20px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.zk-container {
+  position: relative;
+  margin: 20px auto 0;
+  width: 800px;
+  max-width: 90%;
+}
+
+.zk-content-box {
+  margin-bottom: 10px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.zk-content-title {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.zk-content-meta {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.zk-content-data {
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+

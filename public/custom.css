@@ -225,4 +225,38 @@ body {
   line-height: 1.5em;
 }
 
+/* login and signup forms */
+.zk-web-input, .zk-login-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+.zk-web-message, .zk-login-message {
+  font-size: 0.85em;
+  color: #a1887f;
+  margin: 5px 0;
+}
+
+.zk-web-actions, .zk-login-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.zk-web-ok, .zk-login-ok {
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #a1887f;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.zk-web-ok:hover, .zk-login-ok:hover {
+  background-color: #a1887fcc;
+}
 

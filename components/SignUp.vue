@@ -2,7 +2,7 @@
 <client-only>
 <div id="zkSignUpBox" class="zk-web-box zk-hidden">
 <div class="zk-web-header">Sign Up</div>
-<div class="zk-web-slogan">Make the world cleaner.</div>
+<div class="zk-web-slogan">Helps systematize admission processes.</div>
 <div id="zkSignUpForm" class="zk-web-form">
 <input
 id="zkSignUpFullName"

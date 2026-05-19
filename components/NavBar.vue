@@ -15,12 +15,6 @@
           <li><span id="zkNavBasicLogout" class="zk-nav-link">Logout</span></li>
         </ul>
       </nav>
-          <nav id="zkNavGuest" class="zk-nav-right">
-    <ul>
-    <li><a href="/signup" class="zk-nav-link">Sign up</a></li>
-    <li><a href="/signin" class="zk-nav-link">Sign in</a></li>
-    </ul>
-    </nav>
       <nav id="zkNavAdmin" class="zk-nav-right zk-hidden">
         <ul>
           <li><a href="#" class="zk-nav-link">Settings</a></li>

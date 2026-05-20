@@ -10,6 +10,8 @@
 </template>
 <script setup lang="ts">
 import { useSeoMeta, useHead } from "@vueuse/head";
+import '../public/custom.css'
+
 const title = "Zenki";
 const description = "Helps systematize admission processes.";
 useSeoMeta({

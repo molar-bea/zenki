@@ -1,8 +1,18 @@
 <template>
   <div class="about-us">
     <h2 class="zk-team-title">Our Team</h2>
-    <div class="zk-team-grid">
-      <div v-for="member in teamMembers" :key="member.id" class="zk-team-card">
+    
+    <div class="zk-team-row">
+      <div v-for="member in teamMembers.slice(0, 3)" :key="member.id" class="zk-team-card">
+        <router-link :to="member.route || `/team/${member.id}`" class="zk-member-link">
+          <h3>{{ member.name }}</h3>
+        </router-link>
+        <p class="zk-role">{{ member.role }}</p>
+      </div>
+    </div>
+
+    <div class="zk-team-row">
+      <div v-for="member in teamMembers.slice(3)" :key="member.id" class="zk-team-card">
         <router-link :to="member.route || `/team/${member.id}`" class="zk-member-link">
           <h3>{{ member.name }}</h3>
         </router-link>
@@ -20,10 +30,11 @@ export default {
       teamMembers: [
         { id: 1, name: 'Bea R. Molar', role: 'Project Manager', route: '/bmolar' },
         { id: 2, name: 'Gian Carlo J. Suico', role: 'Database Designer' , route: '/gsuico'  },
-        { id: 3, name: 'Nexus F. Paloma', role: 'Web Designer' , route: '/npaloma'  },
-        { id: 4, name: 'Raniel John B. Flores', role: 'Web Designer' , route: '/bflores' },
-        { id: 5, name: 'Exzon Y. Mendoza II', role: 'Web Designer', route: '/emendoza' },
-        { id: 6, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer', route: '/jcormanes' }
+        { id: 3, name: 'Jo Mari Jess Y. Cormanes', role: 'Backend Developer', route: '/jcormanes' },
+        { id: 4, name: 'Nexus F. Paloma', role: 'Web Designer' , route: '/npaloma'  },
+        { id: 5, name: 'Raniel John B. Flores', role: 'Web Designer' , route: '/bflores' },
+        { id: 6, name: 'Exzon Y. Mendoza II', role: 'Web Designer', route: '/emendoza' },
+        { id: 7, name: 'Ervin James Caballes', role: 'Web Designer', route: '/ecaballes' }     
       ]
     }
   }
@@ -33,15 +44,19 @@ export default {
 <style scoped>
 .zk-team-title {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-.zk-team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+.zk-team-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .zk-team-card {
+  flex: 0 1 250px;
   padding: 1.5rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;

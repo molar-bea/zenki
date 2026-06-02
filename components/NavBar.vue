@@ -22,9 +22,16 @@
           <li><span id="zkNavAdminLogout" class="zk-nav-link">Logout</span></li>
         </ul>
       </nav>
+      <nav id="zkNavGuest" class="zk-nav-right">
+      <ul>
+      <li><a href="/signup" class="zk-nav-link">Sign up</a></li>
+      <li><a href="/signin" class="zk-nav-link">Sign in</a></li>
+      </ul>
+      </nav>
     </header>
   </client-only>
 </template>
 <script setup lang="ts">
 const props = defineProps<{ navAdminMode: string }>();
 </script>
+

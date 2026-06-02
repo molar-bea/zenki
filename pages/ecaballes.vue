@@ -1,23 +1,20 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useSeoMeta, useHead } from "@vueuse/head";
+import { ref, onMounted } from "vue";
 
-const fullName = "Exzon Y. Mendoza II";
+const fullName = "Ervin James Caballes";
 const title = `${fullName} | Personal Page`;
-const description = "Resume-style personal page of Exzon Y. Mendoza II.";
-const profilePhoto = "/emendoza-photo.jpg";
-const fallbackPhoto = "/MENDOZA.jpg";
+const description = "Resume-style personal page of Ervin James Caballes.";
+const profilePhoto = "/ecaballes-photo.jpg";
+const fallbackPhoto = "/CABALLES.jpg";
 const currentPhoto = ref(profilePhoto);
 
 function onPhotoError() {
   currentPhoto.value = fallbackPhoto;
 }
 
-// Set document title and meta tags dynamically
 onMounted(() => {
   document.title = title;
-  
-  // Update meta description
+
   let metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute('content', description);
@@ -27,8 +24,7 @@ onMounted(() => {
     meta.content = description;
     document.head.appendChild(meta);
   }
-  
-  // Add viewport meta if not exists
+
   let viewport = document.querySelector('meta[name="viewport"]');
   if (!viewport) {
     const meta = document.createElement('meta');
@@ -38,17 +34,14 @@ onMounted(() => {
   }
 });
 
-// Add stylesheets on mount
 onMounted(() => {
-  // Check if reset.css is already added
   if (!document.querySelector('link[href="/reset.css"]')) {
     const resetLink = document.createElement('link');
     resetLink.rel = 'stylesheet';
     resetLink.href = '/reset.css';
     document.head.appendChild(resetLink);
   }
-  
-  // Check if custom.css is already added
+
   if (!document.querySelector('link[href="/custom.css"]')) {
     const customLink = document.createElement('link');
     customLink.rel = 'stylesheet';
@@ -60,11 +53,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- Remove client-only wrapper or replace with div -->
-    <!-- If NavBar and Copyright components exist, import them -->
-    <nav class="nav-bar" v-if="false">
-      <!-- Temporary placeholder for NavBar -->
-    </nav>
+    <nav class="nav-bar" v-if="false"></nav>
 
     <main class="em-wrap">
       <section class="em-hero">
@@ -72,19 +61,18 @@ onMounted(() => {
           class="em-avatar"
           :src="currentPhoto"
           @error="onPhotoError"
-          alt="Exzon Y. Mendoza II professional profile"
+          alt="Ervin James Caballes professional profile"
         />
 
         <div class="em-intro">
           <p class="em-kicker">Personal Page</p>
-          <h1 class="em-name">Exzon Y. Mendoza II</h1>
-          <p class="em-contact">Leyte, PH | +63 927 197 0911 | lellugetdk@gmail.com</p>
-          <p class="em-contact">
-            <a href="https://github.com/Floranboi" target="_blank" rel="noopener noreferrer">
-              github.com/Floranboi
-            </a>
+          <h1 class="em-name">Ervin James Caballes</h1>
+          <p class="em-contact">Leyte, Philippines | +63 963 355 0908 | caballeservinjames889@gmail.com  </p>
+          <p class="em-summary">
+            Aiming to be a software engineer with experience in full-stack development
+            and database optimization while focusing on delivering high-performance
+            code and intuitive user experiences.
           </p>
-          <p class="em-summary">Aspiring Full-Stack Developer/Game Developer</p>
         </div>
       </section>
 
@@ -100,53 +88,41 @@ onMounted(() => {
         </article>
 
         <article class="em-card em-card-wide">
-          <h2>Experience</h2>
-          <h3>Front End Website</h3>
-          <p class="em-muted">Dec 2025 - Present</p>
-          <ul>
-            <li>Developed 1 responsive, mobile-first web interfaces using Figma and modern CSS frameworks.</li>
-            <li>Optimized asset loading handling over 200 lines of code.</li>
-            <li>General UX graphic designing with custom and free-use image/art materials.</li>
-            <li>Refactored legacy code to adhere to web standards, ensuring WCAG 2.1 compliance.</li>
-          </ul>
-
-          <h3>Back End Server-Side Logic and Database</h3>
-          <p class="em-muted">Aug 2024 - Jun 2025</p>
-          <ul>
-            <li>Designed normalized SQL schemas and indexed tables to improve data retrieval.</li>
-            <li>Implemented data handling for 50+ mock users during testing.</li>
-            <li>Provided CLI front-end tooling for database updates through phpMyAdmin.</li>
-          </ul>
-
-          <h3>Server Hosting (Video Games)</h3>
-          <p class="em-muted">Dec 2025 - Jan 2026</p>
-          <ul>
-            <li>Managed 100+ mod dependencies and resolved conflicts to avoid runtime crashes.</li>
-            <li>Maintained a Windows-based Minecraft server with 99% uptime for active players.</li>
-          </ul>
-        </article>
-
-        <article class="em-card">
-          <h2>Skills</h2>
-          <p><strong>Programming Languages:</strong> Java, C/C++, Python, JavaScript</p>
-          <p><strong>Web Technologies:</strong> HTML, CSS, Figma</p>
-          <p><strong>Database and Server:</strong> SQL(MySQL), phpMyAdmin, Database Design, Linux/Windows Server Administration</p>
-          <p><strong>Tools and Version Control:</strong> Git, GitHub, GitKraken, VSCode, Photoshop</p>
-        </article>
-
-        <article class="em-card">
           <h2>Projects</h2>
+
+          <h3>Library Management System (2024)</h3>
           <ul>
-            <li><strong>itch.io Game Jam Entry:</strong> Volunteered and coordinated in a 2-man team developing a 2D rhythmic button-masher game within 1 week using Godot.</li>
-            <li><strong>Student Database SQL:</strong> Built a CRUD app with phpMyAdmin, executed 50+ test operations, and implemented 15+ SQL triggers and stored procedures for validation and reporting.</li>
+            <li>Built a full-stack web application managing 300+ book titles, automating late-fee calculations to reduce administrative work by 20+ minutes per day.</li>
+            <li>Engineered optimized SQL queries with indexing and joins, reducing API response time by 60% for catalog searches and filtering.</li>
+            <li>Designed a responsive user interface with real-time form validation, preventing invalid ISBN entries and reducing data input errors by 40%.</li>
           </ul>
+
+          <h3>Mathematics-Based Game Website (2024)</h3>
+          <ul>
+            <li>Designed a full-stack interactive platform featuring logic-based math games to boost engagement for students struggling with math logic.</li>
+            <li>Developed a custom game engine with dynamic difficulty scaling, automating the generation of logic puzzles to adapt to individual student skill levels.</li>
+          </ul>
+
+          <h3>Collaborative Web Application (2023)</h3>
+          <ul>
+            <li>Pioneered interactive features within the StudyWithMe application, empowering peer-to-peer learning and collaborative brainstorming sessions, leading to 25% less system bugs/crashes.</li>
+            <li>Engineered features for group study and brainstorming, facilitating peer support in a synchronized, interactive online environment.</li>
+            <li>Architected real-time room logic to support seamless multi-user collaboration and interactive session management.</li>
+          </ul>
+        </article>
+
+        <article class="em-card em-card-wide">
+          <h2>Skills</h2>
+          <p><strong>Programming Languages:</strong> C/C++, Java, Python</p>
+          <p><strong>Web Technologies:</strong> HTML, CSS, JavaScript</p>
+          <p><strong>Database:</strong> MariaDB, MySQL</p>
+          <p><strong>DevOps:</strong> GitHub</p>
         </article>
       </section>
     </main>
 
     <div class="copyright">
-      <!-- Temporary placeholder for Copyright component -->
-      <p>&copy; {{ new Date().getFullYear() }} Exzon Y. Mendoza II</p>
+      <p>&copy; {{ new Date().getFullYear() }} Ervin James Caballes</p>
     </div>
   </div>
 </template>

@@ -176,3 +176,120 @@ body {
 .zk-footer-copyright {
   margin-top: 5px;
 }
+
+
+.zk-nav-link:hover {
+  cursor: pointer;
+}
+
+.zk-page-title {
+  position: relative;
+  margin: 60px auto 0;
+  width: 800px;
+  max-width: 90%;
+  padding: 20px;
+  font-size: 1.8em;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+.zk-container {
+  position: relative;
+  margin: 20px auto 0;
+  width: 800px;
+  max-width: 90%;
+}
+
+.zk-content-box {
+  margin-bottom: 10px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.zk-content-title {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.zk-content-meta {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.zk-content-data {
+  margin-top: 10px;
+  line-height: 1.5em;
+}
+
+/* login and signup forms */
+.zk-web-box, .zk-login-box, .zk-signin-box, .zk-signup-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px #000000bf;
+}
+.zk-web-header,zk-login-header, .zk-signin-header, .zk-signup-header {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2em;
+}
+.zk-web-slogan,.zk-login-slogan, .zk-signin-slogan, .zk-signup-slogan {
+  margin: 10px 0 20px 0;
+  text-align: center;
+}
+.zk-web-form, .zk-login-form, .zk-signin-form, .zk-signup-form {
+  margin-top: 20px;
+}
+
+.zk-web-input, .zk-login-input, .zk-signin-input,.zk-signup-input {
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.zk-web-message, .zk-login-message, .zk-signin-message, .zk-signup-message {
+  font-size: 0.85em;
+  color: #a1887f;
+  margin: 5px 0;
+}
+
+.zk-web-actions, .zk-login-actions,.zk-signin-actions, .zk-signup-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.zk-web-action, .zk-login-action , .zk-signin-action, .zk-signup-action {
+  padding: 10px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.zk-web-ok, .zk-login-ok, .zk-signin-ok, .zk-signup-ok {
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #a1887f;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.zk-web-ok:hover, .zk-login-ok:hover, .zk-signin-ok:hover, .zk-signup-ok:hover {
+  background-color: #a1887fcc;
+}
